@@ -197,13 +197,13 @@
     <string>Save</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>220</y>
+     <y>250</y>
      <width>520</width>
-     <height>331</height>
+     <height>301</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
@@ -225,7 +225,7 @@
        <number>50</number>
       </attribute>
       <attribute name="horizontalHeaderDefaultSectionSize">
-       <number>30</number>
+       <number>50</number>
       </attribute>
       <attribute name="horizontalHeaderHighlightSections">
        <bool>false</bool>
@@ -259,7 +259,7 @@
        <number>50</number>
       </attribute>
       <attribute name="horizontalHeaderDefaultSectionSize">
-       <number>30</number>
+       <number>50</number>
       </attribute>
       <attribute name="horizontalHeaderHighlightSections">
        <bool>false</bool>
@@ -272,6 +272,44 @@
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QLabel" name="Sheet">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>220</y>
+     <width>61</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Sheet</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Sheet_2">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>220</y>
+     <width>61</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Cell</string>
+   </property>
   </widget>
  </widget>
  <tabstops>
