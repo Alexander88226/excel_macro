@@ -179,6 +179,9 @@ class Dialog(QtWidgets.QDialog):
         self.manipulate_sheet_table()
     @QtCore.pyqtSlot()
     def add_cell_item(self):
+        if self.sel_sheet_id == -1:
+            QMessageBox.warning(self, "Warning", "Please select sheet entry. If there isn't any sheet entry, you have to put new sheet entry")
+            return
         query = QSqlQuery()
         query.exec_("insert into Cell (sheet_id) VALUES('" + str(self.sel_sheet_id) + "')")
         self.manipulate_cell_table()
