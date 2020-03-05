@@ -321,7 +321,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def remove_macro(self):        
         if self.sel_macro_id != -1:
             query = QSqlQuery()
-            query.exec_("DELETE FROM Cell where sheet_id in (SELECT id from Sheet where Sheet.macro_id = " + str(self.sel_macro_id))
+            query.exec_("DELETE FROM Cell where sheet_id in (SELECT id from Sheet where Sheet.macro_id = " + str(self.sel_macro_id) + ")")
             query.exec_("DELETE from Sheet where macro_id = " + str(self.sel_macro_id))
             query.exec_("DELETE from Macro where id = " + str(self.sel_macro_id))
             self.manipulate_macro_list()
