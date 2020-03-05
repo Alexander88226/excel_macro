@@ -320,11 +320,15 @@ class MainWindow(QtWidgets.QMainWindow):
     @QtCore.pyqtSlot()
     def remove_macro(self):        
         if self.sel_macro_id != -1:
-            query = QSqlQuery()
-            query.exec_("DELETE FROM Cell where sheet_id in (SELECT id from Sheet where Sheet.macro_id = " + str(self.sel_macro_id) + ")")
-            query.exec_("DELETE from Sheet where macro_id = " + str(self.sel_macro_id))
-            query.exec_("DELETE from Macro where id = " + str(self.sel_macro_id))
-            self.manipulate_macro_list()
+            buttonReply = QMessageBox.question(self, 'Remove Macro', "Are you sure you want to remove this macro?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+            if buttonReply == QMessageBox.Yes:
+                query = QSqlQuery()
+                query.exec_("DELETE FROM Cell where sheet_id in (SELECT id from Sheet where Sheet.macro_id = " + str(self.sel_macro_id) + ")")
+                query.exec_("DELETE from Sheet where macro_id = " + str(self.sel_macro_id))
+                query.exec_("DELETE from Macro where id = " + str(self.sel_macro_id))
+                self.manipulate_macro_list()
+            else:
+                return
     @QtCore.pyqtSlot()
     def run_macro(self):
         if self.sel_macro_id != -1:
